@@ -1,0 +1,62 @@
+( defclass CICLOLAVORO (is-a USER) (role concrete)
+        (slot CodiceLotto (create-accessor read-write) )
+        (slot CodiceArticolo (create-accessor read-write) )
+        (slot DescrizioneArticolo (create-accessor read-write) (type STRING))
+        (slot TotaleOperazioni (create-accessor read-write) )
+        (slot TotaleOperazioniEseguite (create-accessor read-write) )
+        (slot TotaleOperazioniDaEseguire)
+)
+
+( defmessage-handler CICLOLAVORO get-TotaleOperazioniDaEseguire() 
+  (- (send ?self get-TotaleOperazioni) (send ?self get-TotaleOperazioniEseguite))
+)
+
+( defclass OPERAZIONE (is-a USER) (role concrete)
+        (slot CodiceLotto (create-accessor read-write) )
+        (slot NumeroOperazione (create-accessor read-write) )
+        (slot TempoAttrezzaggio (create-accessor read-write) )
+        (slot TempoCiclo (create-accessor read-write) )
+        (slot %TempoCicloPresidiato (create-accessor read-write) )
+        (multislot Macchine (create-accessor read-write) )
+        (multislot Attrezzisti (create-accessor read-write) )
+        (multislot Operatori (create-accessor read-write) )
+        (slot MacchinaAllocata (create-accessor read-write) )
+        (slot AttrezzistaAllocato (create-accessor read-write) )
+        (slot OperatoreAllocato (create-accessor read-write) )
+)
+
+( defclass RISORSA (is-a USER) (role concrete)
+        (slot Codice (create-accessor read-write) )
+        (slot Descrizione (create-accessor read-write) (type STRING) )
+)
+
+( defclass RISORSA-ALLOCATA (is-a RISORSA) (role concrete)
+        (slot CodiceLotto (create-accessor read-write) )
+        (slot InizioImpiego (create-accessor read-write) )
+        (slot FineImpiego (create-accessor read-write) )
+)
+
+
+(definstances MACCHINE-DISPONIBILI
+   (R1 of RISORSA (Codice CNC1)
+                     (Descrizione "Tornio Snupy 1"))
+   (R2 of RISORSA (Codice CNC2)
+                     (Descrizione "Tornio Snupy 2"))
+   (R3 of RISORSA (Codice INDEX1)
+                     (Descrizione "Tornio Index 1"))
+   (R4 of RISORSA (Codice INDEX2)
+                     (Descrizione "Tornio Index 2"))
+
+)
+
+(definstances OPERAI-DISPONIBILI
+   (O1 of RISORSA (Codice Fabio)
+                     (Descrizione "Fabio Fanciullo"))
+   (O2 of RISORSA (Codice Giuliano)
+                     (Descrizione "Giuliano Pirali"))
+   (O3 of RISORSA (Codice Lorenza)
+                     (Descrizione "Lorenza Tonini"))
+   (O4 of RISORSA (Codice Linda)
+                     (Descrizione "Linda Caron"))
+
+)

@@ -1,0 +1,75 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0836
+DATE                : 02/08/00
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+Garbage collection triggered by expression evaluation during
+an assert-string call could corrupt the fact being asserted.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+No small example.
+
+***********
+RESOLUTION:
+***********
+
+In the function StringToFact in factrhs.c, change the lines
+
+   whichField = 0;
+   for (tempPtr = assertArgs->nextArg; tempPtr != NULL; tempPtr = tempPtr->nextArg)
+     {
+      EvaluateExpression(tempPtr,&theResult);
+      factPtr->theProposition.theFields[whichField].type = theResult.type;
+      factPtr->theProposition.theFields[whichField].value = theResult.value;
+      whichField++;
+     }
+
+   ReturnExpression(assertArgs);
+
+to
+        
+   ExpressionInstall(assertArgs); // DR0836
+   whichField = 0;
+   for (tempPtr = assertArgs->nextArg; tempPtr != NULL; tempPtr = tempPtr->nextArg)
+     {
+      EvaluateExpression(tempPtr,&theResult);
+      factPtr->theProposition.theFields[whichField].type = theResult.type;
+      factPtr->theProposition.theFields[whichField].value = theResult.value;
+      whichField++;
+     }
+   ExpressionDeinstall(assertArgs); // DR0836
+   ReturnExpression(assertArgs);
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 02/08/00
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

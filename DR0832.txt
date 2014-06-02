@@ -1,0 +1,54 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0832
+DATE                : 02/10/99
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+Garbage collection triggered by evaluating the arguments
+to str-cat/sym-cat could change the value of the arguments
+already retrieved.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+
+
+***********
+RESOLUTION:
+***********
+
+In the function StrOrSymCatFunction in the file strngfun.c,
+the strings arguments evaluated have their symbol count
+incremented to prevent garbage collection during the function
+call.   
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 02/10/99
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

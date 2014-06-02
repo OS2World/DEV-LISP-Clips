@@ -1,0 +1,75 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0831
+DATE                : 01/08/99
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+The module name was not specified for deffunctions
+by the save command.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+CLIPS> (defmodule MAIN (export ?ALL))
+CLIPS> (defmodule M (import MAIN ?ALL) (export ?ALL))
+CLIPS> (deffunction MAIN::problem (?x))
+CLIPS> (save bug.clp)
+TRUE
+CLIPS> (clear)
+CLIPS> (load bug.clp)
+Redefining defmodule: MAIN
+Defining defmodule: M
+Defining deffunction: problem
+
+[CSTRCPSR3] Cannot define deffunction problem because of an import/export conflict.
+
+ERROR:
+(deffunction MAIN::problem
+FALSE
+CLIPS> 
+
+***********
+RESOLUTION:
+***********
+
+In the function SaveDeffunctionHeader in the file dffnxfun.c,
+replace the line
+
+      PrintRouter(logicalName,"(deffunction ");
+      
+with
+
+      PrintRouter(logicalName,"(deffunction ");
+      PrintRouter(logicalName,DeffunctionModule((void *) dfnxPtr));
+      PrintRouter(logicalName,"::");      
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 01/08/99
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

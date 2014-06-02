@@ -1,0 +1,137 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0833
+DATE                : 09/13/99
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+PutFactSlot C function does not properly increment/decrement
+the slot value that it changes.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+
+
+***********
+RESOLUTION:
+***********
+
+In the function PutFactSlot in the file factmngr.c,
+replace the lines
+
+   /*============================================*/
+   /* Handle setting the slot value of a fact    */
+   /* having an implied deftemplate. An implied  */
+   /* facts has a single multifield slot.        */
+   /*============================================*/
+
+   if (theDeftemplate->implied)
+     {
+      if ((slotName != NULL) || (theValue->type != MULTIFIELD))
+        { return(FALSE); }
+
+      if (theFact->theProposition.theFields[0].type == MULTIFIELD)
+        { ReturnMultifield((struct multifield *) theFact->theProposition.theFields[0].value); }
+
+      theFact->theProposition.theFields[0].type = theValue->type;
+      theFact->theProposition.theFields[0].value = DOToMultifield(theValue);
+      
+      return(TRUE);
+     }
+
+with
+
+   /*============================================*/
+   /* Handle setting the slot value of a fact    */
+   /* having an implied deftemplate. An implied  */
+   /* facts has a single multifield slot.        */
+   /*============================================*/
+
+   if (theDeftemplate->implied)
+     {
+      if ((slotName != NULL) || (theValue->type != MULTIFIELD))
+        { return(FALSE); }
+
+      AtomDeinstall(theFact->theProposition.theFields[0].type,
+                    theFact->theProposition.theFields[0].value);
+
+      if (theFact->theProposition.theFields[0].type == MULTIFIELD)
+        { ReturnMultifield((struct multifield *) theFact->theProposition.theFields[0].value); }
+
+      theFact->theProposition.theFields[0].type = theValue->type;
+      theFact->theProposition.theFields[0].value = DOToMultifield(theValue);
+      
+      AtomInstall(theFact->theProposition.theFields[0].type,
+                  theFact->theProposition.theFields[0].value);
+
+      return(TRUE);
+     }
+
+and replace the lines
+
+   /*=====================*/
+   /* Set the slot value. */
+   /*=====================*/
+
+   if (theFact->theProposition.theFields[whichSlot-1].type == MULTIFIELD)
+     { ReturnMultifield((struct multifield *) theFact->theProposition.theFields[whichSlot-1].value); }
+
+   theFact->theProposition.theFields[whichSlot-1].type = theValue->type;
+
+   if (theValue->type == MULTIFIELD)
+     { theFact->theProposition.theFields[whichSlot-1].value = DOToMultifield(theValue); }
+   else
+     { theFact->theProposition.theFields[whichSlot-1].value = theValue->value; }
+   
+with
+
+   /*=====================*/
+   /* Set the slot value. */
+   /*=====================*/
+
+   AtomDeinstall(theFact->theProposition.theFields[whichSlot-1].type,
+                 theFact->theProposition.theFields[whichSlot-1].value);
+
+   if (theFact->theProposition.theFields[whichSlot-1].type == MULTIFIELD)
+     { ReturnMultifield((struct multifield *) theFact->theProposition.theFields[whichSlot-1].value); }
+
+   theFact->theProposition.theFields[whichSlot-1].type = theValue->type;
+
+   if (theValue->type == MULTIFIELD)
+     { theFact->theProposition.theFields[whichSlot-1].value = DOToMultifield(theValue); }
+   else
+     { theFact->theProposition.theFields[whichSlot-1].value = theValue->value; }
+   
+   AtomInstall(theFact->theProposition.theFields[whichSlot-1].type,
+               theFact->theProposition.theFields[whichSlot-1].value);
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 02/10/99
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

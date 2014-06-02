@@ -1,0 +1,93 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0835
+DATE                : 11/15/99
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+The implode$ function does not properly handle the \
+character in a string.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+CLIPS>                      
+(explode$
+   (nth$ 1 (explode$
+      (nth$ 1 (explode$
+         (nth$ 1 (explode$
+            (implode$ (create$
+               (implode$ (create$
+                  (implode$ (create$
+                     (implode$ (create$ a b c)))))))))))))))
+
+Encountered End-Of-File while scanning a string
+(< < <unprintable character>>>)
+CLIPS>
+
+***********
+RESOLUTION:
+***********
+
+In the function ImplodeMultifield in multifun.c, change the lines
+
+            if (*tmp_str == '"')
+              { strsize++; }
+
+to
+
+             if (*tmp_str == '"')
+               { strsize++; }
+             else if (*tmp_str == '\\') 
+              { strsize++; }          
+
+and change the lines
+
+            if (*tmp_str == '"')
+              {
+               *(ret_str+j) = '\\';
+               j++;
+              }
+
+to
+        
+            if (*tmp_str == '"')
+              {
+               *(ret_str+j) = '\\';
+               j++;
+              }
+            else if (*tmp_str == '\\') 
+              {                       
+               *(ret_str+j) = '\\';    
+               j++;                    
+              }                        
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 11/15/99
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

@@ -1,0 +1,80 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0830
+DATE                : 11/23/98
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : Windows 95
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+Backspaces were not properly handled in the display
+window of the Windows 95 interface.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+***********
+RESOLUTION:
+***********
+
+In PrintFunction in DIAG_WIN.C, replace
+
+   int oldsize, size;
+
+with
+
+   int oldsize, size;
+
+   if (buffer[0] == '\b') return(TRUE);
+   
+   
+In GetUserCmd in DIAG_WIN.C, replace
+
+    case VK_BACK:
+      {
+
+with
+
+    case VK_BACK:
+      {
+       char text[2];
+
+and replace
+		    
+    SendToScreen();
+
+with
+
+    SendToScreen();	     
+
+    text[0] = (char) wParam;
+    text[1] = '\0';
+    PrintRouter("stdout",text);
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 11/23/98
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

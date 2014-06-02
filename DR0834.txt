@@ -1,0 +1,118 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0834
+DATE                : 11/15/99
+STATUS              : OPEN
+
+REPORTED BY         : Gary Riley
+ORGANIZATION        : 
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+The join network could end up in an invalid state during a
+retract if a fact/object matched two patterns in a rule and
+one pattern was inside two nested not conditional elements
+and the other pattern was inside one not conditional element.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+
+CLIPS> 
+(deffacts Stuff
+   (Value)
+   (AxisLine))  
+CLIPS> 
+(defrule r1
+   (initial-fact)
+   (not (and (Value) 
+             (not (AxisLine))))
+   (not (AxisLine))
+   (not (Bogus))
+   =>)
+CLIPS> 
+CLIPS> (reset)
+CLIPS> (retract 2)
+CLIPS> (run)
+<Crash>
+
+***********
+RESOLUTION:
+***********
+
+In retract.h add the following prototype:
+
+LOCALE void                           RetractCheckDriveRetractions(struct alphaMatch *,int);
+
+In retract.c add the following function:
+
+globle void RetractCheckDriveRetractions(
+  struct alphaMatch *theAlphaNode,
+  int position)
+  {
+   struct rdriveinfo *tempDR, *theDR, *lastDR = NULL;
+
+   theDR = DriveRetractionList;
+   while (theDR != NULL)
+     {
+      if ((position < theDR->link->bcount) &&
+          (theDR->link->binds[position].gm.theMatch == theAlphaNode))
+        {
+         tempDR = theDR->next;
+         rtn_struct(rdriveinfo,theDR);
+         if (lastDR == NULL)
+           { DriveRetractionList = tempDR; }
+         else
+           { lastDR->next = tempDR; }
+         theDR = tempDR;
+        }
+      else
+        {
+         lastDR = theDR;
+         theDR = theDR->next;
+        }
+     }
+  }   
+
+In function PNRDrive in the file drive.c adds the lines
+
+   if (join->joinFromTheRight)
+     {
+      RetractCheckDriveRetractions(lhsBinds->binds[lhsBinds->bcount - 1].gm.theMatch,
+                                   (int) join->depth-1);
+     }  
+
+after the following comment block:
+
+   /*===========================================================*/
+   /* The counterf flag was FALSE. This means that a pointer to */
+   /* the pseudo-fact matching the not CE is stored directly in */
+   /* the partial match. Determine the ID of this pseudo-fact   */
+   /* and remove all partial matches from descendent joins that */
+   /* contain the ID.                                           */
+   /*===========================================================*/
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Gary Riley
+DATE                : 11/15/99
+IMPLEMENTED BY      : Gary Riley
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

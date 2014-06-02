@@ -1,0 +1,110 @@
+                          CLIPS DISCREPANCY REPORT
+
+DR #                : 0828
+DATE                : 8/8/98
+STATUS              : OPEN
+
+REPORTED BY         : Tom Kinlaw
+ORGANIZATION        : Compaq
+PHONE #             :
+ADDRESS             :
+
+CLIPS VERSION       : CLIPS 6.1
+HOST                : All
+OS                  : All
+
+********************
+PROBLEM DESCRIPTION:
+********************
+
+Inner member variables in nested instance set queries
+could be confused with member variables from an outer
+query. This would happen if the inner member variable
+name shared all of its characters with the first N
+characters of the outer variable name.
+
+*****************
+COMMAND SEQUENCE:
+*****************
+CLIPS> (clear)
+CLIPS> (unwatch all)
+CLIPS> (defclass cl1
+   (is-a USER)
+   (role concrete)
+   (slot slt
+      (create-accessor read-write)))
+CLIPS> (deffunction fn1
+   ()
+   (make-instance in1 of cl1 (slt in1))
+   (make-instance in2 of cl1 (slt in2))
+   (do-for-instance ((?i cl1)) TRUE
+      (do-for-all-instances ((?ii cl1)) TRUE
+         (progn
+            (printout t "=============" crlf)
+            (send ?i print)
+            (printout t "?i:gen  " ?i crlf)
+            (printout t "?i:slt   " ?i:slt crlf)
+            (printout t crlf)
+            (printout t "-------------" crlf)
+            (send ?ii print)
+            (printout t "?ii:gen " ?ii crlf)
+            (printout t "?ii:slt  " ?ii:slt crlf)
+            (printout t crlf)))))
+CLIPS> (fn1)
+=============
+[in1] of cl1
+(slt in1)
+?i:gen  [in1]
+?i:slt   in1
+
+-------------
+[in1] of cl1
+(slt in1)
+?ii:gen [in1]
+?ii:slt  in1
+
+=============
+[in1] of cl1
+(slt in1)
+?i:gen  [in1]
+?i:slt   in2  ;;; --- ERROR should be ins1
+
+-------------
+[in2] of cl1
+(slt in2)
+?ii:gen [in2]
+?ii:slt  in2
+
+CLIPS>
+***********
+RESOLUTION:
+***********
+
+In the file INSQYPSR.C in the function ReplaceSlotReference,
+replace the following:
+
+while ((eptr == NULL) ? CLIPS_FALSE :
+       (strncmp(ValueToString(eptr->value),str,
+                (CLIPS_STD_SIZE) i) != 0)
+
+with:
+
+ while (eptr && ((i != strlen(ValueToString(eptr->value))) ||
+                 strncmp(ValueToString(eptr->value),str,(CLIPS_STD_SIZE) i)))
+
+*******
+STATUS:
+*******
+
+FIXED BY            : Brian L. Donnell
+DATE                : 8/8/96
+IMPLEMENTED BY      : Brian L. Donnell
+IN VERSION          : 6.2
+DATE                :
+DOCUMENTED BY       :
+DATE                :
+TESTED BY           :
+DATE                :
+APPROVED BY         :
+DATE                :
+

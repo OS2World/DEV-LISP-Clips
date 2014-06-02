@@ -1,0 +1,536 @@
+:TARGET.SUFFIXES
+:TARGET.SUFFIXES
+:DEPENDENCY.
+:TARGET.all
+:DEPENDENCY.
+.\clips.exe
+:TARGET..\watch.obj
+:DEPENDENCY.
+d:\clips\sources\watch.c
+d:\clips\sources\agenda.c
+d:\clips\sources\analysis.c
+d:\clips\sources\argacces.c
+d:\clips\sources\bload.c
+d:\clips\sources\bmathfun.c
+d:\clips\sources\bsave.c
+d:\clips\sources\classcom.c
+d:\clips\sources\classexm.c
+d:\clips\sources\classfun.c
+d:\clips\sources\classinf.c
+d:\clips\sources\classini.c
+d:\clips\sources\classpsr.c
+d:\clips\sources\clsltpsr.c
+d:\clips\sources\commline.c
+d:\clips\sources\conscomp.c
+d:\clips\sources\constrct.c
+d:\clips\sources\constrnt.c
+d:\clips\sources\crstrtgy.c
+d:\clips\sources\cstrcbin.c
+d:\clips\sources\cstrccom.c
+d:\clips\sources\cstrcpsr.c
+d:\clips\sources\cstrnbin.c
+d:\clips\sources\cstrnchk.c
+d:\clips\sources\cstrncmp.c
+d:\clips\sources\cstrnops.c
+d:\clips\sources\cstrnpsr.c
+d:\clips\sources\cstrnutl.c
+d:\clips\sources\default.c
+d:\clips\sources\defins.c
+d:\clips\sources\developr.c
+d:\clips\sources\dffctbin.c
+d:\clips\sources\dffctbsc.c
+d:\clips\sources\dffctcmp.c
+d:\clips\sources\dffctdef.c
+d:\clips\sources\dffctpsr.c
+d:\clips\sources\dffnxbin.c
+d:\clips\sources\dffnxcmp.c
+d:\clips\sources\dffnxexe.c
+d:\clips\sources\dffnxfun.c
+d:\clips\sources\dffnxpsr.c
+d:\clips\sources\dfinsbin.c
+d:\clips\sources\dfinscmp.c
+d:\clips\sources\drive.c
+d:\clips\sources\edbasic.c
+d:\clips\sources\edmain.c
+d:\clips\sources\edmisc.c
+d:\clips\sources\edstruct.c
+d:\clips\sources\edterm.c
+d:\clips\sources\emathfun.c
+d:\clips\sources\engine.c
+d:\clips\sources\evaluatn.c
+d:\clips\sources\expressn.c
+d:\clips\sources\exprnbin.c
+d:\clips\sources\exprnops.c
+d:\clips\sources\exprnpsr.c
+d:\clips\sources\extnfunc.c
+d:\clips\sources\factbin.c
+d:\clips\sources\factbld.c
+d:\clips\sources\factcmp.c
+d:\clips\sources\factcom.c
+d:\clips\sources\factfun.c
+d:\clips\sources\factgen.c
+d:\clips\sources\facthsh.c
+d:\clips\sources\factlhs.c
+d:\clips\sources\factmch.c
+d:\clips\sources\factmngr.c
+d:\clips\sources\factprt.c
+d:\clips\sources\factrete.c
+d:\clips\sources\factrhs.c
+d:\clips\sources\filecom.c
+d:\clips\sources\filertr.c
+d:\clips\sources\generate.c
+d:\clips\sources\genrcbin.c
+d:\clips\sources\genrccmp.c
+d:\clips\sources\genrccom.c
+d:\clips\sources\genrcexe.c
+d:\clips\sources\genrcfun.c
+d:\clips\sources\genrcpsr.c
+d:\clips\sources\globlbin.c
+d:\clips\sources\globlbsc.c
+d:\clips\sources\globlcmp.c
+d:\clips\sources\globlcom.c
+d:\clips\sources\globldef.c
+d:\clips\sources\globlpsr.c
+d:\clips\sources\immthpsr.c
+d:\clips\sources\incrrset.c
+d:\clips\sources\inherpsr.c
+d:\clips\sources\inscom.c
+d:\clips\sources\insfile.c
+d:\clips\sources\insfun.c
+d:\clips\sources\insmngr.c
+d:\clips\sources\insmoddp.c
+d:\clips\sources\insmult.c
+d:\clips\sources\inspsr.c
+d:\clips\sources\insquery.c
+d:\clips\sources\insqypsr.c
+d:\clips\sources\iofun.c
+d:\clips\sources\lgcldpnd.c
+d:\clips\sources\main.c
+d:\clips\sources\memalloc.c
+d:\clips\sources\miscfun.c
+d:\clips\sources\modulbin.c
+d:\clips\sources\modulbsc.c
+d:\clips\sources\modulcmp.c
+d:\clips\sources\moduldef.c
+d:\clips\sources\modulpsr.c
+d:\clips\sources\modulutl.c
+d:\clips\sources\msgcom.c
+d:\clips\sources\msgfun.c
+d:\clips\sources\msgpass.c
+d:\clips\sources\msgpsr.c
+d:\clips\sources\multifld.c
+d:\clips\sources\multifun.c
+d:\clips\sources\objbin.c
+d:\clips\sources\objcmp.c
+d:\clips\sources\objrtbin.c
+d:\clips\sources\objrtbld.c
+d:\clips\sources\objrtcmp.c
+d:\clips\sources\objrtfnx.c
+d:\clips\sources\objrtgen.c
+d:\clips\sources\objrtmch.c
+d:\clips\sources\parsefun.c
+d:\clips\sources\pattern.c
+d:\clips\sources\pprint.c
+d:\clips\sources\prccode.c
+d:\clips\sources\prcdrfun.c
+d:\clips\sources\prcdrpsr.c
+d:\clips\sources\prdctfun.c
+d:\clips\sources\prntutil.c
+d:\clips\sources\proflfun.c
+d:\clips\sources\reorder.c
+d:\clips\sources\reteutil.c
+d:\clips\sources\retract.c
+d:\clips\sources\router.c
+d:\clips\sources\rulebin.c
+d:\clips\sources\rulebld.c
+d:\clips\sources\rulebsc.c
+d:\clips\sources\rulecmp.c
+d:\clips\sources\rulecom.c
+d:\clips\sources\rulecstr.c
+d:\clips\sources\ruledef.c
+d:\clips\sources\ruledlt.c
+d:\clips\sources\rulelhs.c
+d:\clips\sources\rulepsr.c
+d:\clips\sources\scanner.c
+d:\clips\sources\sortfun.c
+d:\clips\sources\strngfun.c
+d:\clips\sources\strngrtr.c
+d:\clips\sources\symblbin.c
+d:\clips\sources\symblcmp.c
+d:\clips\sources\symbol.c
+d:\clips\sources\sysdep.c
+d:\clips\sources\textpro.c
+d:\clips\sources\tmpltbin.c
+d:\clips\sources\tmpltbsc.c
+d:\clips\sources\tmpltcmp.c
+d:\clips\sources\tmpltdef.c
+d:\clips\sources\tmpltfun.c
+d:\clips\sources\tmpltlhs.c
+d:\clips\sources\tmpltpsr.c
+d:\clips\sources\tmpltrhs.c
+d:\clips\sources\tmpltutl.c
+d:\clips\sources\userdata.c
+d:\clips\sources\utility.c
+{d:\clips\sources;$(INCLUDE);}setup.h
+{d:\clips\sources;$(INCLUDE);}constant.h
+{d:\clips\sources;$(INCLUDE);}memalloc.h
+{d:\clips\sources;$(INCLUDE);}router.h
+{d:\clips\sources;$(INCLUDE);}argacces.h
+{d:\clips\sources;$(INCLUDE);}extnfunc.h
+{d:\clips\sources;$(INCLUDE);}watch.h
+{d:\clips\sources;$(INCLUDE);}evaluatn.h
+{d:\clips\sources;$(INCLUDE);}facthsh.h
+{d:\clips\sources;$(INCLUDE);}multifld.h
+{d:\clips\sources;$(INCLUDE);}prntutil.h
+{d:\clips\sources;$(INCLUDE);}utility.h
+{d:\clips\sources;$(INCLUDE);}userdata.h
+{d:\clips\sources;$(INCLUDE);}constrct.h
+{d:\clips\sources;$(INCLUDE);}cstrnchk.h
+{d:\clips\sources;$(INCLUDE);}tmpltfun.h
+{d:\clips\sources;$(INCLUDE);}tmpltpsr.h
+{d:\clips\sources;$(INCLUDE);}modulutl.h
+{d:\clips\sources;$(INCLUDE);}tmpltbsc.h
+{d:\clips\sources;$(INCLUDE);}tmpltdef.h
+{d:\clips\sources;$(INCLUDE);}tmpltutl.h
+{d:\clips\sources;$(INCLUDE);}factrhs.h
+{d:\clips\sources;$(INCLUDE);}default.h
+{d:\clips\sources;$(INCLUDE);}tmpltlhs.h
+{d:\clips\sources;$(INCLUDE);}tmpltrhs.h
+{d:\clips\sources;$(INCLUDE);}symbol.h
+{d:\clips\sources;$(INCLUDE);}scanner.h
+{d:\clips\sources;$(INCLUDE);}exprnpsr.h
+{d:\clips\sources;$(INCLUDE);}factmngr.h
+{d:\clips\sources;$(INCLUDE);}cstrnpsr.h
+{d:\clips\sources;$(INCLUDE);}cstrcpsr.h
+{d:\clips\sources;$(INCLUDE);}bload.h
+{d:\clips\sources;$(INCLUDE);}pattern.h
+{d:\clips\sources;$(INCLUDE);}cstrnutl.h
+{d:\clips\sources;$(INCLUDE);}constrnt.h
+{d:\clips\sources;$(INCLUDE);}reorder.h
+{d:\clips\sources;$(INCLUDE);}commline.h
+{d:\clips\sources;$(INCLUDE);}exprnops.h
+{d:\clips\sources;$(INCLUDE);}cstrccom.h
+{d:\clips\sources;$(INCLUDE);}network.h
+{d:\clips\sources;$(INCLUDE);}modulpsr.h
+{d:\clips\sources;$(INCLUDE);}tmpltbin.h
+{d:\clips\sources;$(INCLUDE);}tmpltcmp.h
+{d:\clips\sources;$(INCLUDE);}conscomp.h
+{d:\clips\sources;$(INCLUDE);}factcmp.h
+{d:\clips\sources;$(INCLUDE);}cstrncmp.h
+{d:\clips\sources;$(INCLUDE);}bsave.h
+{d:\clips\sources;$(INCLUDE);}factbin.h
+{d:\clips\sources;$(INCLUDE);}cstrnbin.h
+{d:\clips\sources;$(INCLUDE);}textpro.h
+{d:\clips\sources;$(INCLUDE);}bmathfun.h
+{d:\clips\sources;$(INCLUDE);}emathfun.h
+{d:\clips\sources;$(INCLUDE);}filecom.h
+{d:\clips\sources;$(INCLUDE);}iofun.h
+{d:\clips\sources;$(INCLUDE);}miscfun.h
+{d:\clips\sources;$(INCLUDE);}multifun.h
+{d:\clips\sources;$(INCLUDE);}parsefun.h
+{d:\clips\sources;$(INCLUDE);}prccode.h
+{d:\clips\sources;$(INCLUDE);}prdctfun.h
+{d:\clips\sources;$(INCLUDE);}proflfun.h
+{d:\clips\sources;$(INCLUDE);}prcdrfun.h
+{d:\clips\sources;$(INCLUDE);}sortfun.h
+{d:\clips\sources;$(INCLUDE);}strngfun.h
+{d:\clips\sources;$(INCLUDE);}sysdep.h
+{d:\clips\sources;$(INCLUDE);}dffctdef.h
+{d:\clips\sources;$(INCLUDE);}ruledef.h
+{d:\clips\sources;$(INCLUDE);}genrccom.h
+{d:\clips\sources;$(INCLUDE);}dffnxfun.h
+{d:\clips\sources;$(INCLUDE);}globldef.h
+{d:\clips\sources;$(INCLUDE);}extobj.h
+{d:\clips\sources;$(INCLUDE);}moduldef.h
+{d:\clips\sources;$(INCLUDE);}developr.h
+{d:\clips\sources;$(INCLUDE);}symblcmp.h
+{d:\clips\sources;$(INCLUDE);}symblbin.h
+{d:\clips\sources;$(INCLUDE);}strngrtr.h
+{d:\clips\sources;$(INCLUDE);}prcdrpsr.h
+{d:\clips\sources;$(INCLUDE);}drive.h
+{d:\clips\sources;$(INCLUDE);}engine.h
+{d:\clips\sources;$(INCLUDE);}rulelhs.h
+{d:\clips\sources;$(INCLUDE);}rulebld.h
+{d:\clips\sources;$(INCLUDE);}cstrnops.h
+{d:\clips\sources;$(INCLUDE);}analysis.h
+{d:\clips\sources;$(INCLUDE);}incrrset.h
+{d:\clips\sources;$(INCLUDE);}rulecstr.h
+{d:\clips\sources;$(INCLUDE);}ruledlt.h
+{d:\clips\sources;$(INCLUDE);}rulebsc.h
+{d:\clips\sources;$(INCLUDE);}lgcldpnd.h
+{d:\clips\sources;$(INCLUDE);}rulepsr.h
+{d:\clips\sources;$(INCLUDE);}agenda.h
+{d:\clips\sources;$(INCLUDE);}reteutil.h
+{d:\clips\sources;$(INCLUDE);}retract.h
+{d:\clips\sources;$(INCLUDE);}rulecom.h
+{d:\clips\sources;$(INCLUDE);}rulebin.h
+{d:\clips\sources;$(INCLUDE);}rulecmp.h
+{d:\clips\sources;$(INCLUDE);}crstrtgy.h
+{d:\clips\sources;$(INCLUDE);}factbld.h
+{d:\clips\sources;$(INCLUDE);}filertr.h
+{d:\clips\sources;$(INCLUDE);}match.h
+{d:\clips\sources;$(INCLUDE);}classcom.h
+{d:\clips\sources;$(INCLUDE);}genrcfun.h
+{d:\clips\sources;$(INCLUDE);}msgcom.h
+{d:\clips\sources;$(INCLUDE);}globlpsr.h
+{d:\clips\sources;$(INCLUDE);}object.h
+{d:\clips\sources;$(INCLUDE);}pprint.h
+{d:\clips\sources;$(INCLUDE);}classfun.h
+{d:\clips\sources;$(INCLUDE);}objrtfnx.h
+{d:\clips\sources;$(INCLUDE);}objrtmch.h
+{d:\clips\sources;$(INCLUDE);}insmngr.h
+{d:\clips\sources;$(INCLUDE);}objrtgen.h
+{d:\clips\sources;$(INCLUDE);}objrtcmp.h
+{d:\clips\sources;$(INCLUDE);}insfun.h
+{d:\clips\sources;$(INCLUDE);}objrtbin.h
+{d:\clips\sources;$(INCLUDE);}objrtbld.h
+{d:\clips\sources;$(INCLUDE);}classini.h
+{d:\clips\sources;$(INCLUDE);}objcmp.h
+{d:\clips\sources;$(INCLUDE);}cstrcbin.h
+{d:\clips\sources;$(INCLUDE);}modulbin.h
+{d:\clips\sources;$(INCLUDE);}msgfun.h
+{d:\clips\sources;$(INCLUDE);}objbin.h
+{d:\clips\sources;$(INCLUDE);}msgpsr.h
+{d:\clips\sources;$(INCLUDE);}msgpass.h
+{d:\clips\sources;$(INCLUDE);}inscom.h
+{d:\clips\sources;$(INCLUDE);}classinf.h
+{d:\clips\sources;$(INCLUDE);}insmoddp.h
+{d:\clips\sources;$(INCLUDE);}modulcmp.h
+{d:\clips\sources;$(INCLUDE);}modulbsc.h
+{d:\clips\sources;$(INCLUDE);}insquery.h
+{d:\clips\sources;$(INCLUDE);}insqypsr.h
+{d:\clips\sources;$(INCLUDE);}inspsr.h
+{d:\clips\sources;$(INCLUDE);}insmult.h
+{d:\clips\sources;$(INCLUDE);}insfile.h
+{d:\clips\sources;$(INCLUDE);}inherpsr.h
+{d:\clips\sources;$(INCLUDE);}genrcpsr.h
+{d:\clips\sources;$(INCLUDE);}immthpsr.h
+{d:\clips\sources;$(INCLUDE);}globlbsc.h
+{d:\clips\sources;$(INCLUDE);}globlcom.h
+{d:\clips\sources;$(INCLUDE);}globlbin.h
+{d:\clips\sources;$(INCLUDE);}globlcmp.h
+{d:\clips\sources;$(INCLUDE);}genrcexe.h
+{d:\clips\sources;$(INCLUDE);}genrcbin.h
+{d:\clips\sources;$(INCLUDE);}genrccmp.h
+{d:\clips\sources;$(INCLUDE);}generate.h
+{d:\clips\sources;$(INCLUDE);}factgen.h
+{d:\clips\sources;$(INCLUDE);}factmch.h
+{d:\clips\sources;$(INCLUDE);}factrete.h
+{d:\clips\sources;$(INCLUDE);}factprt.h
+{d:\clips\sources;$(INCLUDE);}factfun.h
+{d:\clips\sources;$(INCLUDE);}factlhs.h
+{d:\clips\sources;$(INCLUDE);}factcom.h
+{d:\clips\sources;$(INCLUDE);}dffnxbin.h
+{d:\clips\sources;$(INCLUDE);}exprnbin.h
+{d:\clips\sources;$(INCLUDE);}expressn.h
+{d:\clips\sources;$(INCLUDE);}ed.h
+{d:\clips\sources;$(INCLUDE);}defins.h
+{d:\clips\sources;$(INCLUDE);}dfinscmp.h
+{d:\clips\sources;$(INCLUDE);}dfinsbin.h
+{d:\clips\sources;$(INCLUDE);}dffnxpsr.h
+{d:\clips\sources;$(INCLUDE);}dffnxcmp.h
+{d:\clips\sources;$(INCLUDE);}dffnxexe.h
+{d:\clips\sources;$(INCLUDE);}dffctbsc.h
+{d:\clips\sources;$(INCLUDE);}dffctpsr.h
+{d:\clips\sources;$(INCLUDE);}dffctbin.h
+{d:\clips\sources;$(INCLUDE);}dffctcmp.h
+{d:\clips\sources;$(INCLUDE);}clsltpsr.h
+{d:\clips\sources;$(INCLUDE);}classpsr.h
+{d:\clips\sources;$(INCLUDE);}classexm.h
+{d:\clips\sources;$(INCLUDE);}shrtlnkn.h
+:ACTION.Compile::C++ Compiler
+:COMMAND.
+icc.exe @<<
+ /Oc /Oi- 
+ /DINO_CHECK 
+ /Q 
+ /Fi /Si 
+ /Ti /Gm /Gd /G5 /Gs /Gf /Gi 
+ /Gu 
+ /Ol 
+ 
+ /C d:\clips\sources\watch.c
+ d:\clips\sources\agenda.c
+ d:\clips\sources\analysis.c
+ d:\clips\sources\argacces.c
+ d:\clips\sources\bload.c
+ d:\clips\sources\bmathfun.c
+ d:\clips\sources\bsave.c
+ d:\clips\sources\classcom.c
+ d:\clips\sources\classexm.c
+ d:\clips\sources\classfun.c
+ d:\clips\sources\classinf.c
+ d:\clips\sources\classini.c
+ d:\clips\sources\classpsr.c
+ d:\clips\sources\clsltpsr.c
+ d:\clips\sources\commline.c
+ d:\clips\sources\conscomp.c
+ d:\clips\sources\constrct.c
+ d:\clips\sources\constrnt.c
+ d:\clips\sources\crstrtgy.c
+ d:\clips\sources\cstrcbin.c
+ d:\clips\sources\cstrccom.c
+ d:\clips\sources\cstrcpsr.c
+ d:\clips\sources\cstrnbin.c
+ d:\clips\sources\cstrnchk.c
+ d:\clips\sources\cstrncmp.c
+ d:\clips\sources\cstrnops.c
+ d:\clips\sources\cstrnpsr.c
+ d:\clips\sources\cstrnutl.c
+ d:\clips\sources\default.c
+ d:\clips\sources\defins.c
+ d:\clips\sources\developr.c
+ d:\clips\sources\dffctbin.c
+ d:\clips\sources\dffctbsc.c
+ d:\clips\sources\dffctcmp.c
+ d:\clips\sources\dffctdef.c
+ d:\clips\sources\dffctpsr.c
+ d:\clips\sources\dffnxbin.c
+ d:\clips\sources\dffnxcmp.c
+ d:\clips\sources\dffnxexe.c
+ d:\clips\sources\dffnxfun.c
+ d:\clips\sources\dffnxpsr.c
+ d:\clips\sources\dfinsbin.c
+ d:\clips\sources\dfinscmp.c
+ d:\clips\sources\drive.c
+ d:\clips\sources\edbasic.c
+ d:\clips\sources\edmain.c
+ d:\clips\sources\edmisc.c
+ d:\clips\sources\edstruct.c
+ d:\clips\sources\edterm.c
+ d:\clips\sources\emathfun.c
+ d:\clips\sources\engine.c
+ d:\clips\sources\evaluatn.c
+ d:\clips\sources\expressn.c
+ d:\clips\sources\exprnbin.c
+ d:\clips\sources\exprnops.c
+ d:\clips\sources\exprnpsr.c
+ d:\clips\sources\extnfunc.c
+ d:\clips\sources\factbin.c
+ d:\clips\sources\factbld.c
+ d:\clips\sources\factcmp.c
+ d:\clips\sources\factcom.c
+ d:\clips\sources\factfun.c
+ d:\clips\sources\factgen.c
+ d:\clips\sources\facthsh.c
+ d:\clips\sources\factlhs.c
+ d:\clips\sources\factmch.c
+ d:\clips\sources\factmngr.c
+ d:\clips\sources\factprt.c
+ d:\clips\sources\factrete.c
+ d:\clips\sources\factrhs.c
+ d:\clips\sources\filecom.c
+ d:\clips\sources\filertr.c
+ d:\clips\sources\generate.c
+ d:\clips\sources\genrcbin.c
+ d:\clips\sources\genrccmp.c
+ d:\clips\sources\genrccom.c
+ d:\clips\sources\genrcexe.c
+ d:\clips\sources\genrcfun.c
+ d:\clips\sources\genrcpsr.c
+ d:\clips\sources\globlbin.c
+ d:\clips\sources\globlbsc.c
+ d:\clips\sources\globlcmp.c
+ d:\clips\sources\globlcom.c
+ d:\clips\sources\globldef.c
+ d:\clips\sources\globlpsr.c
+ d:\clips\sources\immthpsr.c
+ d:\clips\sources\incrrset.c
+ d:\clips\sources\inherpsr.c
+ d:\clips\sources\inscom.c
+ d:\clips\sources\insfile.c
+ d:\clips\sources\insfun.c
+ d:\clips\sources\insmngr.c
+ d:\clips\sources\insmoddp.c
+ d:\clips\sources\insmult.c
+ d:\clips\sources\inspsr.c
+ d:\clips\sources\insquery.c
+ d:\clips\sources\insqypsr.c
+ d:\clips\sources\iofun.c
+ d:\clips\sources\lgcldpnd.c
+ d:\clips\sources\main.c
+ d:\clips\sources\memalloc.c
+ d:\clips\sources\miscfun.c
+ d:\clips\sources\modulbin.c
+ d:\clips\sources\modulbsc.c
+ d:\clips\sources\modulcmp.c
+ d:\clips\sources\moduldef.c
+ d:\clips\sources\modulpsr.c
+ d:\clips\sources\modulutl.c
+ d:\clips\sources\msgcom.c
+ d:\clips\sources\msgfun.c
+ d:\clips\sources\msgpass.c
+ d:\clips\sources\msgpsr.c
+ d:\clips\sources\multifld.c
+ d:\clips\sources\multifun.c
+ d:\clips\sources\objbin.c
+ d:\clips\sources\objcmp.c
+ d:\clips\sources\objrtbin.c
+ d:\clips\sources\objrtbld.c
+ d:\clips\sources\objrtcmp.c
+ d:\clips\sources\objrtfnx.c
+ d:\clips\sources\objrtgen.c
+ d:\clips\sources\objrtmch.c
+ d:\clips\sources\parsefun.c
+ d:\clips\sources\pattern.c
+ d:\clips\sources\pprint.c
+ d:\clips\sources\prccode.c
+ d:\clips\sources\prcdrfun.c
+ d:\clips\sources\prcdrpsr.c
+ d:\clips\sources\prdctfun.c
+ d:\clips\sources\prntutil.c
+ d:\clips\sources\proflfun.c
+ d:\clips\sources\reorder.c
+ d:\clips\sources\reteutil.c
+ d:\clips\sources\retract.c
+ d:\clips\sources\router.c
+ d:\clips\sources\rulebin.c
+ d:\clips\sources\rulebld.c
+ d:\clips\sources\rulebsc.c
+ d:\clips\sources\rulecmp.c
+ d:\clips\sources\rulecom.c
+ d:\clips\sources\rulecstr.c
+ d:\clips\sources\ruledef.c
+ d:\clips\sources\ruledlt.c
+ d:\clips\sources\rulelhs.c
+ d:\clips\sources\rulepsr.c
+ d:\clips\sources\scanner.c
+ d:\clips\sources\sortfun.c
+ d:\clips\sources\strngfun.c
+ d:\clips\sources\strngrtr.c
+ d:\clips\sources\symblbin.c
+ d:\clips\sources\symblcmp.c
+ d:\clips\sources\symbol.c
+ d:\clips\sources\sysdep.c
+ d:\clips\sources\textpro.c
+ d:\clips\sources\tmpltbin.c
+ d:\clips\sources\tmpltbsc.c
+ d:\clips\sources\tmpltcmp.c
+ d:\clips\sources\tmpltdef.c
+ d:\clips\sources\tmpltfun.c
+ d:\clips\sources\tmpltlhs.c
+ d:\clips\sources\tmpltpsr.c
+ d:\clips\sources\tmpltrhs.c
+ d:\clips\sources\tmpltutl.c
+ d:\clips\sources\userdata.c
+ d:\clips\sources\utility.c
+<<
+:TARGET..\clips.exe
+:DEPENDENCY.
+.\watch.obj
+:ACTION.Link::Linker
+:COMMAND.
+icc.exe @<<
+/Oc /Oi- 
+ 
+ 
+ /DINO_CHECK
+ 
+ /Tdp /Q 
+ /Fi /Si 
+ /Ti /Gm /Gd /G5 /Gs /Gf /Gi 
+ /Gu /Ol 
+ /Q /B" /de /exepack:2 /packd     "
+ /Feclips.exe 
+ .\watch.obj
+<<
